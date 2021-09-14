@@ -1,6 +1,6 @@
 # IntegracionArea
 
-El programa se compone de dos módulos, uno para integrar sobre un área con inecuaciones, y otro para hacer transformaciones de funciones.
+El programa principal ``src/Programa.py`` se compone de dos módulos, uno para integrar sobre un área con inecuaciones, y otro para hacer transformaciones de funciones.
 
 ## Sobre el primer módulo
 
