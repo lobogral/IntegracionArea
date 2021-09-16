@@ -10,7 +10,7 @@ Está probado para funciones de dos variables, pero es generalizable para n vari
 
 Solo es necesario la función y las inecuaciones sobre los que se aplica.
 
-**Advertencia:** No funciones en integrales complicadas (Coordenadas polares, cilíndricas, esféricas, etc.).
+**Advertencia:** No es aplicable en funciones o intervalos complicados (Coordenadas polares, cilíndricas, esféricas, etc.).
 
 ## Sobre el segundo módulo
 
