@@ -2,20 +2,20 @@ from sympy import Matrix
 from sympy import integrate, Piecewise, oo
 from sympy import Symbol, And, simplify
 
-def Integral(función, *intervalos):
-    funcionTrozos = Piecewise((función, And(*intervalos)),(0, True))
-    variables = funcionTrozos.atoms(Symbol)
+def integral(funcion, *intervalos):
+    funcion_trozos = Piecewise((funcion, And(*intervalos)),(0, True))
+    variables = funcion_trozos.atoms(Symbol)
     lista = [(variable, -oo, oo) for variable in variables]
-    return integrate(funcionTrozos, *lista).simplify()
+    return integrate(funcion_trozos, *lista).simplify()
 
-def Transformar(func, listRels, varsRem, diccRem):
+def transformar(func, list_rels, vars_reem, dicc_reem):
 
-    M1 = Matrix(list(diccRem.values()))
-    M2 = Matrix(varsRem)
+    M1 = Matrix(list(dicc_reem.values()))
+    M2 = Matrix(vars_reem)
     det = M1.jacobian(M2).det().simplify()
 
-    funcRem = func.subs(diccRem)
-    listRelsRem = [simplify(rel.subs(diccRem)) for rel in listRels]
+    func_reem = func.subs(dicc_reem)
+    list_rels_reem = [simplify(rel.subs(dicc_reem)) for rel in list_rels]
 
-    return (det, funcRem, listRelsRem)    
+    return (det, func_reem, list_rels_reem)    
 

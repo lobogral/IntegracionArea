@@ -1,6 +1,6 @@
 from sympy import Rational as R
 from sympy import E, Symbol, Abs, cos, sin, pi
-from Programa import Integral, Transformar
+from programa import integral, transformar
 
 x = Symbol("x")
 y = Symbol("y")
@@ -15,28 +15,30 @@ v2 = (0<y)
 v3 = (y<x)
 funcion = E**(-(x**2))
 
-print(Integral(funcion, v1, v2, v3))
+print(integral(funcion, v1, v2, v3))
 
 # Ejemplo 2
-listRels = [x-2*y <= 0, x-2*y >= -4, x+y >= 1, x+y <= 4]
+list_rels = [x-2*y <= 0, x-2*y >= -4, x+y >= 1, x+y <= 4]
 func = 3*x*y
 
-varsRem = [u, v]
-diccRem = {x:R(1,3)*(2*u + v),
-           y:R(1,3)*(u - v)}
+vars_reem = [u, v]
+dicc_reem = {x:R(1,3)*(2*u + v),
+             y:R(1,3)*(u - v)}
 
-det, funcRem, listRelsRem = Transformar(func, listRels, varsRem, diccRem)
-print(Integral(Abs(det)*funcRem, *listRelsRem))
+det, func_reem, list_rels_reem = transformar(func, list_rels,
+                                             vars_reem, dicc_reem)
+print(integral(Abs(det)*func_reem, *list_rels_reem))
 
 # Ejemplo 3
-listRels = [x**2 + y**2 >= 1, x**2 + y**2 <= 5]
+list_rels = [x**2 + y**2 >= 1, x**2 + y**2 <= 5]
 func = x**2 + y
 
-varsRem = [r, θ]
-diccRem = {x:r*cos(θ),
-           y:r*sin(θ)}
+vars_reem = [r, θ]
+dicc_reem = {x:r*cos(θ),
+             y:r*sin(θ)}
 
-det, funcRem, listRelsRem = Transformar(func, listRels, varsRem, diccRem)
-listRelsRem += [r >= 0, θ >= 0, θ <= 2*pi]
-print(Integral(det*funcRem, *listRelsRem))
+det, func_reem, list_rels_reem = transformar(func, list_rels,
+                                             vars_reem, dicc_reem)
+list_rels_reem += [r >= 0, θ >= 0, θ <= 2*pi]
+print(integral(det*func_reem, *list_rels_reem))
 
