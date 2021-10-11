@@ -1,6 +1,6 @@
 # IntegracionArea
 
-El programa principal ``src/Programa.py`` se compone de dos módulos, uno para integrar sobre un área con inecuaciones, y otro para hacer transformaciones de funciones.
+El programa principal ``src/programa.py`` se compone de dos módulos, uno para integrar sobre un área con inecuaciones, y otro para hacer transformaciones de funciones.
 
 ## Sobre el primer módulo
 
@@ -16,4 +16,4 @@ Solo es necesario la función y las inecuaciones sobre los que se aplica.
 
 Es una forma de calcular rápidamente las transformaciones por jacobiano de funciones e intervalos complicados.
 
-**Advertencia:** Es necesario agregar datos, para coordenadas polares es necesario agregar algunos intervalos, se explica en el programa ``src/Ejemplos.py``.
+**Advertencia:** Es necesario agregar datos, para coordenadas polares es necesario agregar algunos intervalos, se explica en el programa ``src/ejemplos.py``.
